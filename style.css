@@ -1,0 +1,178 @@
+/* 
+-- Font-size:
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+ 
+-- Spacing system:
+    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128  
+*/
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --DARK-BACKGROUND: #111827;
+  --HIGHLIGHT-TEXT: rgb(197, 197, 89);
+  --HOVER-LINK-BACKGROUND: rgb(100, 100, 224);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--DARK-BACKGROUND);
+  color: #fff;
+  max-width: 130rem;
+}
+
+/* || General Styles */
+ul li {
+  list-style: none;
+}
+
+a:any-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.heading-primary,
+.heading-secondary {
+  font-size: 3rem;
+  margin-bottom: 5px;
+}
+
+/* || Nav Bar */
+.nav-list {
+  padding: 2.4rem;
+  margin-bottom: 4.8rem;
+
+  display: none;
+}
+
+.nav-list-items a:link,
+.nav-list-items a:visited {
+  padding: 0.5em;
+  border-radius: 2rem;
+}
+
+.nav-list-items a:hover,
+.nav-list-items a:active {
+  background-color: var(--HOVER-LINK-BACKGROUND);
+}
+
+.mobile-nav {
+  padding: 2rem;
+}
+
+/* || Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 3.2rem;
+  margin-bottom: 4.8rem;
+}
+
+.hero-section-img {
+  width: 30vw;
+  height: auto;
+}
+
+.hero-section p {
+  text-align: center;
+}
+
+.section-left {
+  font-size: clamp(4.2rem, 3vh, 6.2rem);
+}
+
+.job-title {
+  color: var(--HIGHLIGHT-TEXT);
+}
+
+/* || Project Section */
+
+.project-section,
+footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4.8rem;
+}
+
+.projects-img {
+  width: 80%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* || Footer Section */
+footer {
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 2.4rem;
+}
+
+/* || Utility */
+.divider {
+  width: 16rem;
+  height: 1.2rem;
+  border: none;
+  border-radius: 15px;
+  background-color: blue;
+}
+
+/* || Responsive Design */
+@media screen and (min-width: 576px) {
+  .nav-list {
+    display: flex;
+    font-size: 2rem;
+    justify-content: flex-end;
+    gap: 3.2rem;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .hero-section {
+    flex-direction: row;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 40%));
+    place-content: center;
+    row-gap: 1.6rem;
+  }
+
+  figure {
+    max-width: 50%;
+  }
+
+  figure:nth-of-type(2n + 1) {
+    justify-self: flex-end;
+  }
+}
